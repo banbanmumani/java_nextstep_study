@@ -5,13 +5,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class CalcTest {
+public class StringCalculatorTest {
 
-    private Calc calc = null;
+    private StringCalculator stringCalculator = null;
 
     @Before
     public void setup() {
-        calc = new Calc();
+        stringCalculator = new StringCalculator();
     }
 
     @Test
@@ -20,7 +20,7 @@ public class CalcTest {
         String param = " ";
 
         // when
-        int anwer = calc.run(param);
+        int anwer = stringCalculator.add(param);
 
         // then
         assertEquals(anwer, 0);
@@ -32,7 +32,7 @@ public class CalcTest {
         String param = "1,2";
 
         // when
-        int answer = calc.run(param);
+        int answer = stringCalculator.add(param);
 
         // then
         assertEquals(answer, 3);
@@ -44,7 +44,7 @@ public class CalcTest {
         String param = "1,2,3";
 
         // when
-        int answer = calc.run(param);
+        int answer = stringCalculator.add(param);
 
         // then
         assertEquals(answer, 6);
@@ -56,7 +56,7 @@ public class CalcTest {
         String param = "1,2:3";
 
         // when
-        int answer = calc.run(param);
+        int answer = stringCalculator.add(param);
 
         // then
         assertEquals(answer, 6);
@@ -68,7 +68,7 @@ public class CalcTest {
         String param = "//;\n1;2;3";
 
         // when
-        int anwer = calc.run(param);
+        int anwer = stringCalculator.add(param);
 
         // then
         assertEquals(anwer, 6);
@@ -80,7 +80,7 @@ public class CalcTest {
         String param = "-1,-3";
 
         // when
-        int answer = calc.run(param);
+        int answer = stringCalculator.add(param);
 
         // then
         assertEquals(answer, 6);
